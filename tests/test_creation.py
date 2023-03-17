@@ -76,7 +76,7 @@ def no_curlies(filepath: Path):
         That is, was jinja able to render everthing? """
     template_strings = ["{{", "}}", "{%", "%}"]
 
-    if any([s in filepath.name for s in template_strings]):
+    if any(s in filepath.name for s in template_strings):
         return False
 
     if filepath.is_file():
